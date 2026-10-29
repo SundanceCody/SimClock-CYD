@@ -6,3 +6,19 @@ You'll need a CYD that's been flashed with MicroPython for this project. Simply 
 The user interface is pretty straightforward with select boxes for the hours, minutes, and AM/PM, a date picker for the date, and a set button to send the selected date and time to the SimClock CYD. I added a fast-forward button to skip ahead in 5-minute increments for good measure. The current time and date displayed on the CYD is mirrored at the top of the control panel, so even if you can't see the SimClock CYD directly, you can still tell exactly what time and date are currently being displayed.
 
 test_display.py and flicker_test.py were used during testing to work out some minor display issues. There are a few different versions and clones of the CYD, and not all behave the same way, so test_display.py may prove useful if your CYD doesn't display the clock correctly. As for flicker_test.py, I was trying to get to the bottom of a persistent flicker on my CYD every few seconds. It turns out the CYD is a bit of a power hog. Simply powering it from a USB port on a computer or laptop doesn't really provide enough power to keep it happy. I recommend using a dedicated power supply that can deliver at least 1A.
+
+A few notes:
+
+SSID, password, and network are all set in main.py starting at line 26. If you need to set up multiple SimClock CYDs, I recommend giving each a unique SSID.
+
+Line 32 of main.py inverts the display colors.
+
+Line 35 of main.py enables/disables the seconds display.
+
+The date range is currently limited to 1/1/2000 - 12/31/2050. If you need to extend the date range, just edit main.py on line 43 and index.html on line 35.
+
+The included style.css file can be used to customize the user interface to you liking. The current, minimal styling seems to be a good fit if you're using a phone to control the SimClock CYD.
+
+To reduce power consumption and avoid flicker, the WiFi Tx power is set to 11dBm. If you're having trouble maintaining a connection in your simulation lab, increase Tx power by editing main.py on line 38. The maximum supported Tx power is 20dBm.
+
+If you're experiencing a lot of display flicker, again, I recommend using a dedicated power supply that can deliver at least 1A. If you don't have a suitable power supply or if that doesn't solve the flicker issue, try reducing the WiFi Tx power on line 38 of main.py. You can also try reducing the display brightness on line 40 of main.py.
