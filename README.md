@@ -17,8 +17,8 @@ Line 35 of main.py enables/disables the seconds display.
 
 The date range is currently limited to 1/1/2000 - 12/31/2050. If you need to extend the date range, just edit main.py on line 43 and index.html on line 35.
 
-The included style.css file can be used to customize the user interface to you liking. The current, minimal styling seems to be a good fit if you're using a phone to control the SimClock CYD.
-
 To reduce power consumption and avoid flicker, the WiFi Tx power is set to 11dBm. If you're having trouble maintaining a connection in your simulation lab, increase Tx power by editing main.py on line 38. The maximum supported Tx power is 20dBm.
 
 If you're experiencing a lot of display flicker, again, I recommend using a dedicated power supply that can deliver at least 1A. If you don't have a suitable power supply or if that doesn't solve the flicker issue, try reducing the WiFi Tx power on line 38 of main.py. You can also try reducing the display brightness on line 40 of main.py.
+
+The included style.css file can be used to customize the user interface to you liking. The current, minimal styling seems to be a good fit if you're using a phone to control the SimClock CYD.
