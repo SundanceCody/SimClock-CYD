@@ -1,0 +1,90 @@
+/* SPDX-License-Identifier: MIT - see the LICENSE file */
+/* style.css - SimClock web page
+ *
+ * Deliberately plain. Edit freely: the page structure is in index.html and
+ * every element you might want to style has an id or class:
+ *
+ *   #app          whole page container
+ *   #live         live clock block
+ *     #live-time  big time readout
+ *     #live-date  date readout
+ *   #set-form     the form
+ *     .row        one line of the form (#time-row, #date-row)
+ *     label, select, input, .colon
+ *   #set-btn      "Set" button
+ *   #ff-row       fast-forward row
+ *     #ff-btn     fast-forward button
+ *     #ff-label   text to the right of the button
+ *   #status       success / error message line
+ *
+ * Save the file to the board with Thonny (File > Save as > MicroPython device)
+ * and refresh the page. Keep it small; the board has limited memory.
+ */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 16px;
+}
+
+#app {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+#live {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#live-time {
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+#live-date {
+  font-size: 1.3em;
+}
+
+.row {
+  margin-bottom: 12px;
+}
+
+label {
+  display: inline-block;
+  min-width: 3.5em;
+}
+
+select, input, button {
+  font-size: 1em;
+  padding: 6px;
+}
+
+#set-btn {
+  margin-top: 4px;
+  padding: 8px 24px;
+}
+
+#ff-row {
+  margin-top: 24px;
+}
+
+#ff-btn {
+  font-size: 1.4em;
+  padding: 6px 14px;
+  vertical-align: middle;
+}
+
+#ff-label {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+#status {
+  margin-top: 16px;
+  min-height: 1.4em;
+}
+
+#status.error {
+  color: #b00020;
+}

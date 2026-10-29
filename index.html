@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT - see the LICENSE file -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimClock</title>
+  <!-- All styling lives in style.css -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- Live clock, as reported by the CYD -->
+    <section id="live">
+      <div id="live-time">--:--:-- --</div>
+      <div id="live-date">---</div>
+    </section>
+
+    <!-- Set the clock -->
+    <form id="set-form">
+      <div class="row" id="time-row">
+        <label for="hour">Time</label>
+        <select id="hour"></select>
+        <span class="colon">:</span>
+        <select id="minute"></select>
+        <select id="ampm">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+
+      <div class="row" id="date-row">
+        <label for="date">Date</label>
+        <input type="date" id="date" min="2000-01-01" max="2050-12-31">
+      </div>
+
+      <button type="submit" id="set-btn">Set</button>
+    </form>
+
+    <!-- Fast-forward -->
+    <div id="ff-row">
+      <button type="button" id="ff-btn" aria-label="Fast-forward 5 minutes">&#9193;</button>
+      <span id="ff-label">fast-forward 5 minutes</span>
+    </div>
+
+    <div id="status" role="status"></div>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
